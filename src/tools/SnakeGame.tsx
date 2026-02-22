@@ -16,7 +16,7 @@ export const SnakeGame = () => {
   const [over, setOver] = useState(false);
   const [started, setStarted] = useState(false);
   const ref = useRef<HTMLCanvasElement>(null);
-  const timer = useRef<ReturnType<typeof setInterval>>();
+  const timer = useRef<ReturnType<typeof setInterval>>(undefined);
 
   useEffect(() => {
     const h = (e: KeyboardEvent) => {

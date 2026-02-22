@@ -7,11 +7,11 @@ export const StopwatchTimer = () => {
   const [swTime, setSwTime] = useState(0);
   const [swRun, setSwRun] = useState(false);
   const [laps, setLaps] = useState<number[]>([]);
-  const swRef = useRef<ReturnType<typeof setInterval>>();
+  const swRef = useRef<ReturnType<typeof setInterval>>(undefined);
   const [tmInput, setTmInput] = useState("01:00");
   const [tmSec, setTmSec] = useState(60);
   const [tmRun, setTmRun] = useState(false);
-  const tmRef = useRef<ReturnType<typeof setTimeout>>();
+  const tmRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   useEffect(() => {
     if (swRun) swRef.current = setInterval(() => setSwTime((t) => t + 1), 10);
